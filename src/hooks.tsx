@@ -4,20 +4,10 @@ import { SocketIOContext } from "./context";
 
 export const useSocketIOContext = () => useContext(SocketIOContext);
 
-export const useEmit = (ev: string, ...args: any[]) => {
-  const { socketIO } = useSocketIOContext();
-  useEffect(() => {
-    socketIO?.emit(ev, ...args);
-  }, [socketIO, ...args]);
-};
-
 export const useOn = (ev: string, listener: (...args: any[]) => void) => {
   const { socketIO } = useSocketIOContext();
   useEffect(() => {
     socketIO?.on(ev, listener);
-    return () => {
-      socketIO?.off(ev, listener);
-    };
   }, [socketIO, listener]);
 };
 
@@ -41,18 +31,12 @@ export const useSocketIO = (
     socketIO?.on("connect", () => {
       setConnected(true);
     });
-    return () => {
-      socketIO?.off("connect");
-    };
   }, [socketIO]);
 
   useEffect(() => {
     socketIO?.on("disconnect", () => {
       setConnected(false);
     });
-    return () => {
-      socketIO?.off("disconnect");
-    };
   }, [socketIO]);
 
   return {
