@@ -1,5 +1,5 @@
 import { ManagerOptions, Socket, SocketOptions } from "socket.io-client";
-import { createContext, ReactNode } from "react";
+import React, { createContext, ReactNode } from "react";
 import { useSocketIO } from "./hooks";
 
 type SocketIOContextType = {

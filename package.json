@@ -4,23 +4,43 @@
   "description": "React Hooks for Socket.io",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "yarn clean && tsc && cp package.json README.md ./dist"
+    "clean": "rm dist",
+    "build": "tsc",
+    "copy": "cp package.json README.md ./dist"
   },
   "keywords": [
     "react",
     "typescript"
   ],
-  "author": {
-    "name": "Valeriano Macuri",
-    "url": "https://valerianomacuri.vercel.app"
-  },
+  "author": "Valeriano Macuri (https://valerianomacuri.vercel.app)",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^17.0.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "socket.io-client": "^4.5.1",
     "typescript": "^4.3.5"
-  }
+  },
+  "dependencies": {
+    "csstype": "^3.0.8",
+    "debug": "^4.3.4",
+    "engine.io-client": "^6.2.2",
+    "engine.io-parser": "^5.0.4",
+    "js-tokens": "^4.0.0",
+    "loose-envify": "^1.4.0",
+    "ms": "^2.1.2",
+    "object-assign": "^4.1.1",
+    "scheduler": "^0.20.2",
+    "socket.io-client": "^4.5.1",
+    "socket.io-parser": "^4.2.1",
+    "ws": "^8.2.3",
+    "xmlhttprequest-ssl": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valerianomacuri/socket.io-react-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/valerianomacuri/socket.io-react-client/issues"
+  },
+  "homepage": "https://github.com/valerianomacuri/socket.io-react-client#readme"
 }
